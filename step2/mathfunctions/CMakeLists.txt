@@ -1,1 +1,1 @@
-add_library(MathFunctions mathfunctions.cxx)
+add_library(mymath mathfunctions.cxx)
