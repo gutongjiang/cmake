@@ -46,6 +46,10 @@ install (FILES "${PROJECT_BINARY_DIR}/tutorialconfig.h" DESTINATION include)
 # enable testing
 enable_testing ()
 
+# does the usage message work?
+add_test (TutorialUsage tutorial)
+set_tests_properties (TutorialUsage PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number")
+
 # does the application run
 add_test (TutorialRuns tutorial 25)
 
@@ -61,7 +65,4 @@ set_tests_properties (TutorialNegative PROPERTIES PASS_REGULAR_EXPRESSION "-25 i
 add_test (TutorialSmall tutorial 0.0001)
 set_tests_properties (TutorialSmall PROPERTIES PASS_REGULAR_EXPRESSION "0.0001 is 0.01")
 
-# does the usage message work?
-add_test (TutorialUsage tutorial)
-set_tests_properties (TutorialUsage PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number")
  
